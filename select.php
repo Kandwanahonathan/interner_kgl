@@ -6,12 +6,13 @@
     <title>select data from knax</title>
 </head>
 <body>
-   <table border='2'>
+   <table border='2' style="border-collapse:none;">
       <th>Id</th>
       <th>Student_Name</th>
       <th>Level</th>
       <th>Number</th>
       <th>Amount</th>
+      <th colspan="2">operator</th>
       <?php
       include('conn.php');
       $select="SELECT * FROM knax";
@@ -24,6 +25,9 @@
             <td><?php echo$row['level']?></td>
             <td><?php echo$row['number']?></td>
             <td><?php echo$row['amount']?></td>
+           
+            <?php echo "<td>  <a href='update.php?id=".$row['id']."'>update</a></td>"?>
+            <?php echo "<td> <a href='delete.php? id=".$row['id']."'>Delete</a><td>"?>
         </tr>
         <?php
       }
